@@ -1,0 +1,14 @@
+import spark.SparkContext
+import SparkContext._
+
+object simple{
+	def main(args: Array[String]){
+		val logFile = "/var/log/syslog"
+		val sc = new SparkContext("local","/home/zezzy/Desktop/project/App/spark-6.1",
+			List("target/scala-2.10.7/testSparkApp_2.10.7-0.0.1.jar"))
+		val logData = sc.textFile(logFile,2).cache()
+		val numAs = logData.filter(line => line.contains("a")).count()
+		val numBs = logData.filter(line => line.contains("b")).count()
+		println("lines with a: %s, Lines with b: %s".format(numAs, numBs))
+	}
+}
