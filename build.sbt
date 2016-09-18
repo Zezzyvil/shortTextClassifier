@@ -9,10 +9,8 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "1.6.1"
 libraryDependencies ++= Seq(
 "org.apache.spark" % "spark-streaming_2.10" % "1.6.1" % "provided",
 "org.apache.spark" % "spark-streaming-twitter_2.10" % "1.6.1",
-"org.apache.spark" % "spark-mllib_2.10" % "1.3.0",
+"org.apache.spark" % "spark-mllib_2.10" % "1.6.1",
 "com.google.code.gson" % "gson" % "1.7.1"
-
-
 )
 
 //resolvers += "mvnrepository" at "http://mvnrepository.com/artifact/"

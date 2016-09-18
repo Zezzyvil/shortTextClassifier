@@ -21,7 +21,7 @@ object TwitterByTags {
     val accessToken = "370274844-myp3uE998LsjsYNqI5t8kQQXSN4cL3uvVKVmbCYF"
     val accessTokenSecret = "bLNdv2QEq03ncpvhHB8iCPiwIitatn9BkVwYJRvngt6y3"
 
-    
+
     // Set the system properties so that Twitter4j library used by twitter stream
     // can use them to generat OAuth credentials
     System.setProperty("twitter4j.oauth.consumerKey", consumerKey)
@@ -102,7 +102,7 @@ object CollectTweets {
 
     val tweetStream = TwitterUtils.createStream(ssc, None).filter(_.getLang == "en")
       .map(_.getText)
-      
+
     tweetStream.foreachRDD((rdd, time) => {
       val count = rdd.count()
       if (count > 0) {

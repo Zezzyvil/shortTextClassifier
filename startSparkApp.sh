@@ -2,7 +2,7 @@
 
 echo reset
 echo " *[1] show trending # tags "
-echo "  [2] show top tweets "
+echo "  [2] Classifiers"
 echo "  [3] Extract features and train model "
 echo "  [4] Collect Tweets "
 echo "  [5] Exit "
@@ -13,7 +13,7 @@ read result
 case "$result" in
   2)
   echo
-      ~/Desktop/project/App/spark-1.6.1-bin-hadoop2.6/bin/spark-submit --supervise --class "popularTweetsByTags" ./target/scala-2.10/twitterSparkApp.jar
+      ~/Desktop/project/App/spark-1.6.1-bin-hadoop2.6/bin/spark-submit --supervise --class "classifiers" ./target/scala-2.10/twitterSparkApp.jar
     ;;
 
   3)
